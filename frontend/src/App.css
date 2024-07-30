@@ -1,0 +1,249 @@
+/* Global rules*/
+:root {
+  --primary: black;
+  --secondary: rgb(24 24 27);
+  --border: rgba(63, 63, 70, 0.4);
+  --title: rgb(244 244 245);
+  --background-color: rgb(39, 39, 42);
+  --sub-title: rgb(161 161 170);
+  --blue: rgb(93 188 252);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*:focus {
+  outline: none;
+}
+body {
+  background-color: var(--background-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
+/* small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Big */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.container {
+  margin: 10% auto;
+  padding: 0 30px;
+}
+/* start Framework */
+.click-animation {
+  animation: click 0.5s;
+}
+.loading-right {
+  animation: loading-right 0.5s;
+}
+.loading-left {
+  animation: loading-left 0.5s;
+}
+.loading {
+  animation: loading 0.5s;
+}
+@keyframes click {
+  0% {
+    scale: 0.6;
+  }
+  50% {
+    scale: 1.2;
+  }
+}
+@keyframes loading {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes loading-right {
+  0% {
+    position: relative;
+    right: -50%;
+    scale: 0;
+  }
+  100% {
+    position: relative;
+    right: 0;
+    scale: 1;
+  }
+}
+
+@keyframes loading-left {
+  0% {
+    position: relative;
+    left: -50%;
+    scale: 0;
+  }
+  100% {
+    position: relative;
+    left: 0;
+    scale: 1;
+  }
+}
+/* end Framework */
+/* start header  */
+header {
+  background-color: var(--primary);
+  padding: 20px;
+}
+header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header h1 a {
+  color: var(--title);
+}
+header .count-of-note {
+  color: var(--title);
+}
+/* end header */
+/* start Notes */
+.Notes {
+  padding: 20px;
+  color: var(--sub-title);
+  background-color: var(--secondary);
+}
+.Notes .Note {
+  cursor: pointer;
+  border-bottom: 2px solid rgb(63 63 70);
+}
+.Notes .Note:hover {
+  background-color: var(--background-color);
+}
+.Notes .Note h3 {
+  margin: 5px 0;
+}
+.Notes .Note p {
+  margin-bottom: 10px;
+}
+.add {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 35px;
+  position: relative;
+  left: 100%;
+  transform: translate(-100%, 10px);
+}
+/* end Notes */
+/* start Note */
+.Note {
+  background-color: var(--secondary);
+  padding: 20px;
+}
+.Note h2 {
+  color: var(--title);
+  margin-bottom: 10px;
+}
+.Note textarea {
+  color: var(--sub-title);
+  font-size: 18px;
+  background-color: var(--secondary);
+  border: none;
+  resize: none;
+  height: fit-content;
+}
+.Note span {
+  display: block;
+  color: var(--sub-title);
+  margin: 10px 0;
+}
+.Note i {
+  color: red;
+  font-size: 30px;
+  margin-left: 100%;
+  transform: translateX(-100%);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.Note i:hover {
+  scale: 1.4;
+}
+/* end Note */
+/* start create-page */
+.create-note {
+  padding: 20px;
+}
+.create-note .title {
+  display: flex;
+  color: var(--title);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.create-note .title label {
+  margin-right: 5%;
+}
+.create-note .title input ,
+.create-note .note textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  outline: none;
+  background-color: var(--secondary);
+  color: var(--sub-title);
+  padding: 5px;
+  caret-color: var(--title);
+}
+.create-note .title input::placeholder ,
+.create-note .note textarea::placeholder{
+  color: var(--sub-title);
+  transition: 0.3s;
+}
+.create-note .title input:focus::placeholder ,
+.create-note .note textarea:focus::placeholder{
+  opacity: 0;
+}
+.create-note .note {
+  display: flex;
+}
+.create-note .note label {
+  margin-right: calc(4% - 2px);
+  color: var(--title);
+  font-size: 20px;
+}
+.create-note .note textarea {
+  resize: none;
+}
+.create-note [type = 'submit']{
+  padding: 4px;
+  border-radius: 6px;
+  background-color: var(--secondary);
+  color: var(--title);
+  display: block;
+  width: fit-content;
+  margin: 10px auto;
+  cursor: pointer;
+}
+/* end create-page */
